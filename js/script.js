@@ -73,7 +73,26 @@ function tableCreate(){
     body.appendChild(tbl);
 }
 tableCreate();
+/* https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces --> Useful Link Explination of Children etc.*/
+
+document.write("<h1> Basic 4 | Hotels</h1>")
 
 
+function HotelConstructor (name, rooms, avnights, bookednights){
+	this.name = name;
+	this.rooms = rooms; 
+	this.avnights = avnights; 
+	this.bookednights = bookednights;
+	this.checkAvailability = function() {
+		return this.avnights - this.bookednights; 
+	}; 
+}
 
+var Hotels = [
+	"Hitlon",
+	"Marriott",
+	"Holiday Inn"
+];
+
+var hiltonHotel = new HotelConstructor("Hilton", "80", "80", )
 
