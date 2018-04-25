@@ -50,11 +50,29 @@ document.write("<hr>")
 document.write("<h1> Basic 3 | Table Creation</h1>")
 
 
-function gettable() {
-		var arr = [];
-		arr.push(document.getElementById("rows").value);
-	    arr.push(document.getElementById("cols").value);
-		}
+
+function tableCreate(){
+    var body = document.body,
+        tbl  = document.createElement('table');
+    tbl.style.width  = '100%';
+    tbl.style.border = '1px 1px 1px 1px solid black';
+
+    var a = (parseInt(document.getElementById("rows").value,10));
+
+    var b = (parseInt(document.getElementById("cols").value,10));
+
+    for(var i = 0; i < a; i++){
+        var tr = document.getElementById("table").insertRow();
+        tr.style.border= "1px solid black";
+        for(var j = 0; j < b; j++){
+           		var td = tr.insertCell();
+                	td.appendChild(document.createTextNode("Row " + i + " " + "Column- " + j));
+                	td.style.border = '1px solid black'; 
+                }
+           }
+    body.appendChild(tbl);
+}
+tableCreate();
 
 
 
